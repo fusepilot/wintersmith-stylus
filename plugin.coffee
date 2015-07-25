@@ -34,7 +34,11 @@ module.exports = (env, callback) ->
 
           if dependencies?
             for dependency in dependencies
-              currentLib = require(dependency)
+              try
+                currentLib = require(dependency)
+              catch e
+                prequire = require('parent-require')
+                currentLib = prequire(dependency)
               renderer.use(currentLib()) if currentLib?
 
           renderer.render (err, css) ->

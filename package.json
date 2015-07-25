@@ -10,6 +10,7 @@
   "dependencies": {
     "coffee-script": "^1.7.1",
     "nib": "^1.0.3",
+    "parent-require": "^1.0.0",
     "stylus": ">=0.19.x"
   },
   "devDependencies": {
